@@ -223,6 +223,7 @@ Here's the relevant part of your POM file that you should modify:
 
 xml
 Copy code
+ <!--            
 <plugin>
     <groupId>org.codehaus.cargo</groupId>
     <artifactId>cargo-maven3-plugin</artifactId>
@@ -243,6 +244,7 @@ Copy code
         </execution>
     </executions>
 </plugin>
+-->
 You can either remove this entire plugin block or comment it out using XML comments:
 
 xml
