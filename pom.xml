@@ -216,6 +216,38 @@
             <overwrite>true</overwrite>
           </configuration>
         </plugin>
+                
+Thank you for providing the POM file. Based on the provided configuration, it seems that the Cargo plugin is indeed configured to start and stop a container during the Maven build process. To resolve the issue mentioned, you should either remove or comment out the Cargo plugin configuration if you're not intending to use it for container management.
+
+Here's the relevant part of your POM file that you should modify:
+
+xml
+Copy code
+<plugin>
+    <groupId>org.codehaus.cargo</groupId>
+    <artifactId>cargo-maven3-plugin</artifactId>
+    <executions>
+        <execution>
+            <id>start-container</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+                <goal>start</goal>
+            </goals>
+        </execution>
+        <execution>
+            <id>stop-container</id>
+            <phase>post-integration-test</phase>
+            <goals>
+                <goal>stop</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+You can either remove this entire plugin block or comment it out using XML comments:
+
+xml
+Copy code
+<!--   
         <plugin>
           <groupId>org.codehaus.cargo</groupId>
           <artifactId>cargo-maven3-plugin</artifactId>
@@ -236,6 +268,7 @@
           </configuration>
         </plugin>
       </plugins>
+             -->
     </pluginManagement>
     <plugins>
       <plugin>
