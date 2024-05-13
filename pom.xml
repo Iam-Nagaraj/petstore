@@ -246,7 +246,6 @@ Copy code
 </plugin>
 -->
 You can either remove this entire plugin block or comment it out using XML comments:
-
 xml
 Copy code 
         <plugin>
