@@ -248,8 +248,7 @@ Copy code
 You can either remove this entire plugin block or comment it out using XML comments:
 
 xml
-Copy code
-<!--   
+Copy code 
         <plugin>
           <groupId>org.codehaus.cargo</groupId>
           <artifactId>cargo-maven3-plugin</artifactId>
@@ -270,7 +269,6 @@ Copy code
           </configuration>
         </plugin>
       </plugins>
-             -->
     </pluginManagement>
     <plugins>
       <plugin>
